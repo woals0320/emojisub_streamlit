@@ -1,8 +1,12 @@
 import streamlit as st
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip, ImageClip
+import moviepy.editor as mp
+from moviepy.video.VideoClip import TextClip
+from moviepy.video.VideoClip import ImageClip
+from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
+from moviepy.config import change_settings
+import pysrt
 from PIL import ImageFont, Image, ImageDraw
 import numpy as np
-import pysrt
 from pilmoji import Pilmoji
 
 # 디자인 가이드 설정
