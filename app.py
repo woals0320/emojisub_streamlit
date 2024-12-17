@@ -23,8 +23,8 @@ design_guides = {
 }
 
 emotion_suffixes = {
-    'anger': ' \U0001F4A2',
-    'happiness': ' \U0001F495',
+    'anger': ' 💢', # '\U0001F4A2'
+    'happiness': ' 💕', # '\U0001F495'
     'surprise': ' !!',
 }
 
