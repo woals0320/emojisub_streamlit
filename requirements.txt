@@ -3,3 +3,4 @@ moviepy==1.0.3
 pysrt
 Pillow
 numpy
+pilmoji==2.0.4
