@@ -59,7 +59,7 @@ def main():
     st.markdown("MP4 파일과 SRT 파일을 업로드하세요. 자막은 감정에 맞는 디자인으로 작성됩니다.")
     
     mp4_file = st.file_uploader("동영상 파일 업로드", type=["mp4"])
-    srt_file = st.file_uploader("srt 자 파일 업로드", type=["srt"])
+    srt_file = st.file_uploader("srt 자막 파일 업로드", type=["srt"])
     
     if mp4_file and srt_file:
         output_name = st.text_input("저장할 파일 이름 입력 (예: output.mp4)")
