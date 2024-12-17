@@ -56,7 +56,7 @@ def get_text_width(text, font_path, fontsize):
 def main():
     # Streamlit 인터페이스
     st.title("감정기반 이모지 자막 프로그램")
-    st.markdown("## MP4 파일과 SRT 파일을 업로드하세요. 자막은 감정에 맞는 디자인으로 작성됩니다.")
+    st.markdown("MP4 파일과 SRT 파일을 업로드하세요. 자막은 감정에 맞는 디자인으로 작성됩니다.")
     
     mp4_file = st.file_uploader("동영 파일 업로드", type=["mp4"])
     srt_file = st.file_uploader("srt 파일 업로드", type=["srt"])
