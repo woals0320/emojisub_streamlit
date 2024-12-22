@@ -1,5 +1,6 @@
 import streamlit as st
 import moviepy.editor as mp
+from moviepy.editor import VideoFileClip
 from moviepy.video.VideoClip import TextClip
 from moviepy.video.VideoClip import ImageClip
 from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
