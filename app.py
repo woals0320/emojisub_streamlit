@@ -66,6 +66,11 @@ def main():
         output_name = st.text_input("저장할 파일 이름 입력 (예: output.mp4)")
         if st.button("시작"):
             with st.spinner("비디오에 자막을 추가 중입니다..."):
+                # 임시 파일 저장
+                video_path = f"./temp_{mp4_file.name}"  # 임시 파일 경로
+                with open(video_path, "wb") as f:
+                    f.write(mp4_file.getbuffer())
+            
                 video = VideoFileClip(mp4_file.name)
                 subs = pysrt.from_string(srt_file.read().decode("utf-8"))
     
