@@ -5,3 +5,4 @@ Pillow
 numpy
 pilmoji==2.0.4
 emoji==1.7.0
+VideoFileClip
