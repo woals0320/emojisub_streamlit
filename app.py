@@ -9,6 +9,7 @@ import pysrt
 from PIL import ImageFont, Image, ImageDraw
 import numpy as np
 from pilmoji import Pilmoji
+import tempfile
 
 # 디자인 가이드 설정
 fonts_folder = "./fonts"
@@ -70,11 +71,13 @@ def main():
         if st.button("시작"):
             with st.spinner("비디오에 자막을 추가 중입니다..."):
                 # 임시 파일 저장
-                video_path = f"./temp_{mp4_file.name}"  # 임시 파일 경로
-                with open(video_path, "wb") as f:
-                    f.write(mp4_file.getbuffer())
-            
-                video = VideoFileClip(mp4_file.name)
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as temp_video:
+                temp_video.write(mp4_file.getbuffer())
+                temp_video_path = temp_video.name  # 임시 파일 경로 저장
+
+                video = VideoFileClip(temp_video_path)  # 수정된 경로로 파일 로드
+
+                
                 subs = pysrt.from_string(srt_file.read().decode("utf-8"))
     
                 subtitle_clips = []
