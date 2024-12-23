@@ -42,11 +42,14 @@ def make_emoji_image(emoji, font_path, font_size):
     return np.array(image)
 
 def extract_emotion(subtitle_text):
-    if "|emotion=" in subtitle_text:
-        text, emotion = subtitle_text.split("|emotion=")
-        return text.strip(), emotion.strip()
-    return subtitle_text, 'neutral'
-
+    """자막에서 텍스트와 감정을 추출"""
+    if "|" in subtitle_text:
+        text, meta = subtitle_text.split("|")  # '자막'과 '화자(감정)' 분리
+        if "(" in meta and ")" in meta:
+            emotion = meta.split("(")[-1].split(")")[0]  # () 안의 감정 추출
+            return text.strip(), emotion.strip()
+    return subtitle_text.strip(), 'neutral'  # 기본값은 'neutral'
+    
 def get_text_width(text, font_path, fontsize):
     font = ImageFont.truetype(font_path, fontsize)
     image = Image.new("RGBA", (1, 1))
