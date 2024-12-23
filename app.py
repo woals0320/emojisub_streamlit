@@ -72,8 +72,8 @@ def main():
             with st.spinner("비디오에 자막을 추가 중입니다..."):
                 # 임시 파일 저장
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as temp_video:
-                temp_video.write(mp4_file.getbuffer())
-                temp_video_path = temp_video.name  # 임시 파일 경로 저장
+                    temp_video.write(mp4_file.getbuffer())
+                    temp_video_path = temp_video.name  # 임시 파일 경로 저장
 
                 video = VideoFileClip(temp_video_path)  # 수정된 경로로 파일 로드
 
